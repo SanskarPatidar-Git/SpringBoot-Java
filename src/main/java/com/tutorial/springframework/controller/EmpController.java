@@ -26,8 +26,11 @@ import com.tutorial.springframework.service.EmpService;
  * @RequestBody -> Get the data from Payload/body.
  * @PathVariable -> Provide data direct in URL endpoint. : emp/delete/1
  * @RequestParam -> data from params : emp/get?name=sanskar
+ * 
+ * CORS( @CrossOrigin(origins = "http://localhost:4200") )-
+ * Apply origin to access api calls within this controller.
+ * Add the origins which can access this Api.
  */
-
 
 @RestController
 @RequestMapping("/emp/")

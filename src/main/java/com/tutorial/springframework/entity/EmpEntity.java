@@ -5,6 +5,7 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Transient;
 
 @Entity(name = "emp")
 public class EmpEntity {
@@ -21,6 +22,13 @@ public class EmpEntity {
 	
 	@Column(name = "number")
 	private String number;
+	
+	/* @Transient
+	 * Do not persist into database.
+	 */
+	@Transient
+	public boolean isSelected;
+	
 	
 	public EmpEntity() {
 		
