@@ -28,6 +28,7 @@ import com.tutorial.springframework.service.EmpService;
  * @RequestParam -> data from params : emp/get?name=sanskar
  */
 
+
 @RestController
 @RequestMapping("/emp/")
 public class EmpController {
@@ -58,5 +59,14 @@ public class EmpController {
 	@GetMapping("getall")
 	public ResponseListDto<EmpEntity> getAll() {
 		return empService.getAll();
+	}
+	
+	/*
+	 * This API is only used to show that how an error is handler within application
+	 * by using GlobalExceptionHanler.
+	 */
+	@GetMapping("error")
+	public void throwError() {
+		throw new IllegalArgumentException("by GlobalExceptionHandler");
 	}
 }
