@@ -15,6 +15,8 @@ import org.springframework.stereotype.Component;
  * Now there is no need to write logs while we can focus on business logics0.
  * Logging is managed by Spring.
  * Be carefull with Point cut expression. If it is not valid it will not work.
+ * 
+ * If you are using spring boot starter dependency so Aspect comes inbuilt.
  */
 
 @Aspect

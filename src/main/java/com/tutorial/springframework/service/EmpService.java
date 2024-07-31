@@ -7,12 +7,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 
 import org.springframework.stereotype.Service;
 
+
 import com.tutorial.springframework.dto.ResponseDto;
 import com.tutorial.springframework.dto.ResponseListDto;
 import com.tutorial.springframework.dto.ResponseObjectDto;
 import com.tutorial.springframework.entity.EmpEntity;
 import com.tutorial.springframework.repository.EmpRepository;
 import com.tutorial.springframework.util.AppUtil;
+
+import jakarta.transaction.Transactional;
 
 @Service
 public class EmpService {
@@ -57,6 +60,7 @@ public class EmpService {
 		return empResult;
 	}
 	
+	@Transactional
 	public ResponseListDto<EmpEntity> getAll(){
 		ResponseListDto<EmpEntity> empList;
 		try {
@@ -68,3 +72,7 @@ public class EmpService {
 		return empList;
 	}
 }
+
+/* @Transactional -> use to maintain transaction.
+ * While manipulating with DB if any exception occurs it will be rollback automatically.
+ */
